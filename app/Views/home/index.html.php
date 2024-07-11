@@ -58,7 +58,7 @@
     }
 </style>
 
-    <?php require_once '../app/Views/components/header.php'?>
+    <?php require_once 'components/header.php'?>
     <div class="container container-home containers">
         <div class="d-flex align-items-center justify-content-center flex-row gap-3">
             <a href="/medicament" class="d-flex align-items-center justify-content-center flex-column gap-3 box box-1">

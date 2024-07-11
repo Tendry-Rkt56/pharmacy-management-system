@@ -15,7 +15,7 @@ class MedicamentController extends Controller
           $medicaments = $this->app->getModel('medicament')->all($limit, $offset, $data);
           $categories = $this->app->getModel('category')->getAll();
           $countArticles = count($medicaments);
-          return $this->render('medicaments.index', [
+          return $this->render('admin.medicaments.index', [
                'page' => $page,
                'count' => $count,
                'limit' => $limit,
@@ -30,7 +30,7 @@ class MedicamentController extends Controller
      public function create ()
      {
           $categories = $this->app->getModel('category')->getAll();
-          return $this->render('medicaments.create', [
+          return $this->render('admin.medicaments.create', [
                'categories' => $categories,
                'token' => $_SESSION['token'],
           ]);
@@ -57,7 +57,7 @@ class MedicamentController extends Controller
      {
           $medicament = $this->app->getModel('medicament')->getOne($id);
           $categories = $this->app->getModel('category')->getAll();
-          return $this->render('medicaments.edit', [
+          return $this->render('admin.medicaments.edit', [
                'medicament' => $medicament,
                'token' => $_SESSION['token'],
                'categories' =>$categories,

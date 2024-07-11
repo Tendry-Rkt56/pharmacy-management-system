@@ -13,7 +13,7 @@ class CategoryController extends Controller
           $offset = ($page - 1) * $limit;
           $maxPages = ceil($count / $limit);
           $categories = $this->app->getModel('category')->all($limit, $offset);
-          return $this->render('category.index', [
+          return $this->render('admin.category.index', [
                'token' => $_SESSION['token'],
                'categories' => $categories,
                'page' => $page,
@@ -23,7 +23,7 @@ class CategoryController extends Controller
 
      public function create ()
      {
-          return $this->render('category.create', [
+          return $this->render('admin.category.create', [
                'token' => $_SESSION['token'],
           ]);
      }
@@ -39,7 +39,7 @@ class CategoryController extends Controller
      public function edit (int $id)
      {
           $category = $this->app->getModel('category')->find($id);
-          return $this->render('category.edit', [
+          return $this->render('admin.category.edit', [
                'token' => $_SESSION['token'],
                'category' => $category,
           ]);
