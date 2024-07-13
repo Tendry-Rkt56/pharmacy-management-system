@@ -1,0 +1,105 @@
+body, html {
+     height: 100%;
+     margin: 0;
+     font-family: Arial, sans-serif;
+}
+ 
+.container {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    display: flex;
+    height: 80vh;
+    box-shadow:0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.left-panel {
+    background-color: #4CAF50; 
+    color: white;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.left-panel h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.left-panel p {
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 10px;
+    max-width: 300px;
+}
+
+.right-panel {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 300px;
+    padding: 20px;
+    box-sizing: border-box;
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+    color: #4CAF50; /* Changer la couleur pour un vert */
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50; /* Changer la couleur pour un vert */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #388E3C; /* Couleur plus foncée pour le survol */
+}
+
+a {
+    color: #4CAF50; /* Changer la couleur pour un vert */
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+}

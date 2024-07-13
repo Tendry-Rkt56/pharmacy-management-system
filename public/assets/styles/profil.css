@@ -1,5 +1,4 @@
 .containers {
-    background-color: #e5f8ef;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,10 +10,23 @@
 .profile-card {
     background: #fff;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 550px;
     position: relative;
+}
+
+.profile-card::before {
+    content: '€';
+    position: absolute;
+    top:-5%;
+    right:-5%;
+    padding:8px 15px;
+    color:white;
+    font-size:14px;
+    font-weight:bolder;
+    border-radius:50%;
+    background-color: #3da342;
 }
 
 .profile-header {

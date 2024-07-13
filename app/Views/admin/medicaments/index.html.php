@@ -47,18 +47,17 @@
                <table class="container table table-striped table-hover table-bordered">
                     <thead style="text-align:center;">
                          <tr>
-                              <th scope="col">#</th>
                               <th scope="col">Nom</th>
                               <th scope="col">Prix</th>
                               <th scope="col">Ordonnance</th>
                               <th scope="col">Catégorie associée</th>
+                              <th scope="col">Disponibilté</th>
                               <th scope="col"></th>
                          </tr>
                     </thead>
                     <tbody style="text-align: center;">
                          <?php foreach($medicaments as $medicament): ?>
                               <tr>
-                                   <td><?=$medicament->id?></td>
                                    <td><?=$medicament->nom?></td>
                                    <td class="fw-bold"><?=number_format($medicament->prix, thousands_separator: ' ')?> Ar</td>
                                    <td>
@@ -69,6 +68,7 @@
                                         <?php endif ?>
                                    </td>
                                    <td style="text-align:center;"><?=$medicament->category ?? '----'?></td>
+                                   <td class="text-<?=$medicament->nombre > 0 ? 'success' : 'danger'?>"><?=$medicament->nombre > 0 ? 'Disponible' : 'Indisponible'?></td>
                                    <td>
                                         <div class="d-flex">
                                              <a href="/medicament/edit/<?=$medicament->id?>" class="mx-1 btn btn-sm btn-primary">Modifier</a>

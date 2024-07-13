@@ -27,7 +27,7 @@ class UserController extends Controller
 
      public function login ()
      {
-          return $this->render('user.login');
+          return $this->render('user.logins');
      }
 
      public function authentication (array $data = [])
@@ -74,7 +74,7 @@ class UserController extends Controller
      {
           $update = $this->app->getModel('user')->update($_SESSION['user']->id, $data, $files);
           if ($update) {
-               header('Location: /user'); exit();
+               header('Location: /user/'.$_SESSION['user']->id); exit();
                exit();
           }
           else {

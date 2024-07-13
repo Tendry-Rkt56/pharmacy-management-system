@@ -24,60 +24,34 @@
           }
      </style>
 
-    	<div class="sidebar">
-      	<div class="logo-details">
-        		<i class="bx bxs-bank"></i>
-        		<span class="logo_name"> Admin </span>
-      	</div>
-      	<ul class="nav-links">
-        		<li>
-          		<a href="/" class="<?php if (strlen($uri) < 1): ?>active<?php endif ?>">
-            			<i class="bx bx-grid-alt"></i>
-            			<span class="links_name">Accueil</span>
-         			</a>
-        		</li>
-        		<li>
-          		<a href="/medicament" class="<?php if (str_contains($uri, '/medicament')): ?>active<?php endif ?>">
-            			<i class="bx bx-box"></i>
-            			<span class="links_name">Médicaments</span>
-          		</a>
-        		</li>
-        		<li>
-          		<a href="/category" class="<?php if (str_contains($uri, '/category')): ?>active<?php endif ?>">
-           			<i class="bx bx-list-ul"></i>
-            			<span class="links_name">Catégories</span>
-          		</a>
-        		</li>
-        		<li>
-          		<a href="/user" class="<?php if (str_contains($uri, 'user')): ?>active<?php endif ?>">
-            			<i class="bx bx-pie-chart-alt-2"></i>
-            			<span class="links_name">Utilisateurs</span>
-          		</a>
-        		</li>
-        		<li>
-          		<a href="#" class="<?php if (strlen($uri) < -1): ?>active<?php endif ?>">
-            			<i class="bx bx-coin-stack"></i>
-            			<span class="links_name">Achats</span>
-          		</a>
-			</li>
-        		<li>
-          		<form action="/logout" class="mt-4 bx bx-book-alt nav" method="POST">
-            			<i class=""></i>
-            			<input type="submit" class="btn btn-outline-danger links_name" value="Se déconnecter">
-          		</form>
-			</li>
-        
-      	</ul>
-    	</div>
+	<div class="sidebar">
+            <div class="logo">
+               <h2>ADMIN</h2>
+            </div>
+            <nav>
+               <ul>
+                   <li class="lien <?php if(strlen($uri) == 1): ?>active<?php endif ?>"><a href="/">Accueil</a></li>
+               	    <li class="lien <?php if(str_contains($uri, '/medicament')): ?>active<?php endif ?>"><a href="/medicament">Médicaments</a></li>
+               	    <li class="lien <?php if(str_contains($uri, '/category')): ?>active<?php endif ?>"><a href="/category">Catégories</a></li>
+               	    <li class="lien <?php if(str_contains($uri, '/user')): ?>active<?php endif ?>"><a  href="/user">Utilisateurs</a></li>
+               	    <li class="lien <?php if(str_contains($uri, '/achat')): ?>active<?php endif ?>"><a href="/achat">Achats</a></li>
+				    <li>
+					    <form action="/logout" method="POST">
+						    <input type="submit" value="Déconnexion" class="btn btn-danger">
+					    </form>
+				    </li>
+               	</ul>
+            </nav>
+     </div>	
      <section class="home-section">
       	<nav>
        	 	<div class="sidebar-button">
           		<i class="bx bx-menu sidebarBtn"></i>
           		<h3><span class="dashboard">PHA</span>RM</h3>
         		</div>
-			<div class="d-flex align-items-center justify-content-center flex-row gap-3">
-				<a href="/">Administration</a>
-				<a href="/users">Utilisateur</a>
+			<div class="admins d-flex align-items-center justify-content-center flex-row gap-3">
+				<a class="liens <?php if (!str_contains($uri, '/users')):?>active<?php endif ?>" href="/">Administration</a>
+				<a class="liens <?php if (str_contains($uri, '/users')):?>active<?php endif ?>" href="/users">Utilisateur</a>
 			</div>
         		<a style="text-decoration:none;" href="/user/<?=$_SESSION['user']->id?>" class="profile-details">
 				<?php if (isset($_SESSION['user']))

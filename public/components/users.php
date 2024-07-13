@@ -55,7 +55,7 @@
           		</a>
         		</li>
         		<li>
-          		<a href="#" class="<?php if (strlen($uri) < -1): ?>active<?php endif ?>">
+          		<a href="/users/achat" class="<?php if (str_contains($uri, '/achat')): ?>active<?php endif ?>">
             			<i class="bx bx-coin-stack"></i>
             			<span class="links_name">Achats</span>
           		</a>

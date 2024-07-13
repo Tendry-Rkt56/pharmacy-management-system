@@ -12,7 +12,7 @@
 </head>
 <body>
 
-     <?php require_once 'components/users.php' ?>
+     <?php require_once 'components/header.php' ?>
 
 
      <div class="containers">
@@ -29,7 +29,7 @@
                          
                <div class="container flex-column d-flex align-items-center justify-content-between gap-4 mb-5">
                     <div class="container d-flex align-items-center justify-content-between flex-row">
-                         <h2 class="align-self-start" style="letter-spacing:2px">Les <span style="border-bottom:2px solid rgb(9,181, 9);">méd</span>icaments</h2>
+                         <h2 class="align-self-start" style="letter-spacing:2px">Les <span style="border-bottom:2px solid rgb(9,181, 9);">Ac</span>hats</h2>
                          <a href="/medicament/new" class="btn btn-secondary btn-sm">Nouveau</a>
                     </div>
                </div>
@@ -56,7 +56,10 @@
                                    <td style="text-align:center;"><?=$formattedDate?></td>
                                    <td>
                                         <div class="d-flex">
-                                             <a href="/users/details/<?=$achat->id?>" class="mx-1 btn btn-sm btn-primary">Détails</a>
+                                             <a href="/users/details/<?=$achat->id?>" class="mx-1 btn btn-primary">Détails</a>
+                                             <form method="" action="/achat/delete/<?=$achat->id?>">
+                                                  <input type="submit" class="btn btn-danger" value="Supprimer">
+                                             </form>
                                         </div>
                                    </td>
                               </tr>  

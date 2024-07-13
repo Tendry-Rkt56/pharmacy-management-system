@@ -6,14 +6,141 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+
+:root {
+	--poppins: 'Poppins', sans-serif;
+	--lato: 'Lato', sans-serif;
+  --green: #1cc88a;
+	--light: #f7f7f7;
+	--blue: #3C91E6;
+	--light-blue: #CFE8FF;
+	--grey: #eee;
+	--dark-grey: #AAAAAA;
+	--dark: #342E37;
+	--red: #DB504A;
+	--yellow: #FFCE26;
+	--light-yellow: #FFF2C6;
+	--orange: #FD7238;
+	--light-orange: #FFE0D3;
+}
+
+body {
+  background-color:#f8f9fa;
+}
+
 .sidebar{
-  position: fixed;
-  height: 100vh;
   width: 240px;
-  /* background: #0A2558; */
-  box-shadow:0 0 3px rgba(0, 0, 0, 0.1);
-  background-color:#040e20;
-  transition: all 0.5s ease;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  position: fixed; /* Rend la barre latérale fixe */
+  height: 100%; /* Prend toute la hauteur de la fenêtre */
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+}
+
+.sidebar .logo h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  margin:30px 0;
+  border-radius:3px;
+  padding: 10px 20px;
+  color: #555;
+  cursor: pointer;
+}
+
+.sidebar nav ul li a {
+  text-decoration:none;
+  padding: 10px 20px;
+  color: #555;
+  cursor: pointer;
+}
+
+.sidebar nav ul .lien:hover {
+  width:100%;
+  background-color: #dadada;
+}
+
+.sidebar nav ul .lien.active {
+  background-color: #f1f1f1;
+}
+/* 
+.sidebars {
+  background:#ffff;
+} */
+
+.admins .liens {
+  text-decoration:none;
+  color:#262626;
+  font-size:14px;
+}
+
+.admins .liens:hover {
+  color:#1cc88a;
+}
+
+.admins .liens.active {
+  color:green;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.card {
+  flex: 1;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card.blue {
+  background-color: #4e73df;
+}
+
+.card.light-blue {
+  background-color: #36b9cc;
+}
+
+.card.purple {
+  background-color: #6f42c1;
+}
+
+.card.green {
+  background-color: #1cc88a;
+}
+
+.card h3 {
+  color: #fff;
+  margin-top: 0;
+  font-size: 1.2em;
+}
+
+.card p {
+  color: #fff;
+  font-size: 2em;
+  margin: 10px 0;
+}
+
+.card span {
+  color: #fff;
+  font-size: 0.9em;
 }
 
 .sidebar.active{
@@ -74,7 +201,6 @@
   /* font-style: italic; */
   white-space: nowrap;
 }
-
 
 .sidebar .nav-links .log_out{
   position: absolute;
@@ -167,31 +293,85 @@ nav .profile-details i{
   transition: all 0.5s ease;
 }
 
-.admin {
-  padding: 20px 30px;
-  border-radius:8px;
+
+.table-data {
+  position:relative;
+  left:1%;
+	display: flex;
+	flex-wrap: wrap;
+	grid-gap: 24px;
+	margin-top: 24px;
+	width: 100%;
+	color: var(--dark);
+}
+.table-data > div {
+	border-radius: 20px;
+	background: var(--light);
+	padding: 24px;
+	overflow-x: auto;
+}
+.table-data .head {
+	display: flex;
+	align-items: center;
+	grid-gap: 16px;
+	margin-bottom: 24px;
+}
+.table-data .head h3 {
+	margin-right: auto;
+	font-size: 24px;
+	font-weight: 600;
+}
+.table-data .head .bx {
+	cursor: pointer;
 }
 
-.medicament {
-  background: #e87d88;
-  text-decoration:none;
+.table-data .order {
+	flex-grow: 1;
+	flex-basis: 500px;
 }
-
-.category {
-  background:#8FDACB;
-  text-decoration:none;
+.table-data .order table {
+	width: 100%;
+	border-collapse: collapse;
 }
-
-.user {
-  background:#66b0ff;
-  text-decoration:none;
+.table-data .order table th {
+	padding-bottom: 12px;
+	font-size: 13px;
+	text-align: left;
+	border-bottom: 1px solid var(--grey);
 }
-
-.admin h3 {
-  letter-spacing:2Px;
-  color:#f5f5f5;
-  font-size:20px;
-  font-weight:bolder;
+.table-data .order table td {
+	padding: 16px 0;
+}
+.table-data .order table tr td:first-child {
+	display: flex;
+	align-items: center;
+	grid-gap: 12px;
+	padding-left: 6px;
+}
+.table-data .order table td img {
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+.table-data .order table tbody tr:hover {
+	background: var(--grey);
+}
+.table-data .order table tr td .status {
+	font-size: 10px;
+	padding: 6px 16px;
+	color: var(--light);
+	border-radius: 20px;
+	font-weight: 700;
+}
+.table-data .order table tr td .status.completed {
+	background: var(--green);
+}
+.table-data .order table tr td .status.process {
+	background: var(--yellow);
+}
+.table-data .order table tr td .status.pending {
+	background: var(--orange);
 }
 
 

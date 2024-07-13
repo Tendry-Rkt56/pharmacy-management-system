@@ -1,6 +1,8 @@
 <?php
 
 use App\Container;
+use App\Controller\AchatController;
+use App\Controller\AdminController;
 use App\Controller\CategoryController;
 use App\Controller\ErrorController;
 use App\Controller\HomeController;
@@ -60,7 +62,7 @@ $router->map('POST', '/medicament/edit/[i:id]', function($id) use ($container, $
 // Routes pour les catégories
 $router->map('GET', '/category', function() use ($container, $middleware) {
      $middleware->isAdmin();
-     $container->getController(MedicamentController::class)->index($_GET);
+     $container->getController(CategoryController::class)->index($_GET);
 }); 
 
 $router->map('POST', '/category-[i:id]', function ($id) use($container, $middleware) {
@@ -130,6 +132,20 @@ $router->map('GET', '/user/[i:id]', function ($id) use ($container, $middleware)
      $container->getController(UserController::class)->profil($id);
 });
 
+// Routes pour les catégories
+// Routes pour les achats
+
+$router->map('GET', '/achat', function () use ($container, $middleware) {
+     $middleware->isAdmin();
+     $container->getController(AdminController::class)->achats($_GET);
+});
+
+$router->map('GET', '/achat/details/[i:id]', function ($id) use ($container, $middleware) {
+     $middleware->isAdmin();
+     $container->getController(AchatController::class)->details($id);
+});
+
+// Routes pour les achats
 
 //------------------------------------------------------------------
 
@@ -166,6 +182,12 @@ $router->map('GET', '/error', function () use ($container) {
 });
 
 //---------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------
+$router->map('GET', '/users/achat', function () use ($container) {
+     $container->getController(AchatController::class)->index();
+});
+
 
 $match = $router->match();
 if ($match !== null) {

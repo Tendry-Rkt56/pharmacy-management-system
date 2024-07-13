@@ -1,0 +1,98 @@
+
+ .invoice-box {
+     position: absolute;
+     top:50%; left:55%;
+     transform: translate(-50%,-50%);
+     background: white;
+     width: 700px;
+     margin: 40px auto;
+     padding: 30px;
+     border: 1px solid #eee;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+     color: #333;
+}
+ 
+ header {
+     text-align: center;
+     margin-bottom: 20px;
+ }
+ 
+ header h1 {
+     font-size: 2.5em;
+     margin: 0;
+ }
+ 
+ .invoice-info {
+     display: flex;
+     justify-content: center;
+     margin-top: 10px;
+ }
+ 
+ .invoice-info div {
+     background: #eee;
+     padding: 5px 10px;
+     margin: 0 5px;
+     border-radius: 5px;
+     font-weight: bold;
+ }
+ 
+ .address-info {
+     display: flex;
+     justify-content: space-between;
+     margin-bottom: 20px;
+ }
+ 
+ .address-info h2 {
+     margin: 0 0 10px;
+ }
+ 
+ .invoice-details table {
+     width: 100%;
+     border-collapse: collapse;
+     margin-bottom: 20px;
+ }
+ 
+ .invoice-details th, .invoice-details td {
+     border: 1px solid #ddd;
+     padding: 8px;
+     text-align: left;
+ }
+ 
+ .invoice-details th {
+     background: #4CAF50;
+     color: white;
+ }
+ 
+ .invoice-details td {
+     background: white;
+ }
+ 
+ .totals {
+     text-align: right;
+     margin-bottom: 20px;
+ }
+ 
+ .totals p {
+     margin: 5px 0;
+     font-size: 1.1em;
+ }
+ 
+ .totals .total {
+     font-size: 1.2em;
+     font-weight: bold;
+ }
+ 
+ footer {
+     text-align: center;
+     border-top: 1px solid #ddd;
+     padding-top: 20px;
+ }
+ 
+ footer p {
+     margin: 5px 0;
+ }
+ 
+ footer .thanks {
+     margin-top: 10px;
+     font-weight: bold;
+ }
