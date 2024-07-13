@@ -24,32 +24,32 @@
           }
      </style>
 
-    	<div class="sidebar">
+    	<div class="sidebar sidebars">
       	<div class="logo-details">
         		<i class="bx bxs-bank"></i>
         		<span class="logo_name"> Admin </span>
       	</div>
       	<ul class="nav-links">
         		<li>
-          		<a href="/" class="<?php if (strlen($uri) < 1): ?>active<?php endif ?>">
+          		<a href="/users" class="<?php if (strlen($uri) < 1): ?>active<?php endif ?>">
             			<i class="bx bx-grid-alt"></i>
             			<span class="links_name">Accueil</span>
          			</a>
         		</li>
         		<li>
-          		<a href="/medicament" class="<?php if (str_contains($uri, '/medicament')): ?>active<?php endif ?>">
+          		<a href="/users/medicament" class="<?php if (str_contains($uri, 'medicament')): ?>active<?php endif ?>">
             			<i class="bx bx-box"></i>
             			<span class="links_name">Médicaments</span>
           		</a>
         		</li>
         		<li>
-          		<a href="/category" class="<?php if (str_contains($uri, '/category')): ?>active<?php endif ?>">
+          		<a href="/users/category" class="<?php if (str_contains($uri, 'category')): ?>active<?php endif ?>">
            			<i class="bx bx-list-ul"></i>
             			<span class="links_name">Catégories</span>
           		</a>
         		</li>
         		<li>
-          		<a href="/user" class="<?php if (str_contains($uri, 'user')): ?>active<?php endif ?>">
+          		<a href="/users/listes" class="<?php if (str_contains($uri, 'user')): ?>active<?php endif ?>">
             			<i class="bx bx-pie-chart-alt-2"></i>
             			<span class="links_name">Utilisateurs</span>
           		</a>
@@ -75,10 +75,6 @@
           		<i class="bx bx-menu sidebarBtn"></i>
           		<h3><span class="dashboard">PHA</span>RM</h3>
         		</div>
-			<div class="d-flex align-items-center justify-content-center flex-row gap-3">
-				<a href="/">Administration</a>
-				<a href="/users">Utilisateur</a>
-			</div>
         		<div class="profile-details">
 				<?php if (isset($_SESSION['user']))
 					$user = $_SESSION['user'];

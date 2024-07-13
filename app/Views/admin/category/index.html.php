@@ -25,7 +25,7 @@
           <?php endif ?>
 
           <div style="width:90%" class="container d-flex align-items-center justify-content-between gap-1 my-4">
-               <h2>Les <span style="border-bottom:2px solid blueViolet;letter-spacing:3px">cat</span>égories</h2>
+               <h2 style="letter-spacing:2px">Les <span style="border-bottom:2px solid rgb(9, 181, 9)">cat</span>égories</h2>
                <a href="/category/new" class="btn btn-secondary btn-sm">Ajouter une nouvelle catégorie</a>
           </div>
 

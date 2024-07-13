@@ -59,7 +59,7 @@
                          
                <div class="container flex-column d-flex align-items-center justify-content-between gap-4 mb-5">
                     <div class="container d-flex align-items-center justify-content-between flex-row">
-                         <h2 class="align-self-start">Les <span style="border-bottom:2px solid blueViolet;">uti</span>lisateurs</h2>
+                         <h2 class="align-self-start" style="letter-spacing:2px;">Les <span style="border-bottom:2px solid rgb(19,181,19);">uti</span>lisateurs</h2>
                          <a href="/user/new" class="btn btn-secondary btn-sm">Nouveau</a>
                     </div>
                     <form action="" class="gap-2 align-self-start d-flex align-items-center justify-content-center flex-row">
@@ -112,7 +112,7 @@
                                    </td>
                                    <td>
                                         <div class="d-flex">
-                                             <a href="/user/edit/<?=$user->id?>" class="mx-1 btn btn-sm btn-primary">Modifier</a>
+                                             <a href="/user/<?=$user->id?>" class="mx-1 btn btn-sm btn-primary">Profil</a>
                                              <form action="/user/<?=$user->id?>" method="POST">
                                                   <input type="submit" class="btn btn-danger btn-sm" value="Supprimer">
                                              </form>

@@ -126,6 +126,15 @@ class User extends Table
           return $stmt->execute();
      }
 
+     public function getOne (int $id)
+     {
+          $query = "SELECT * FROM users WHERE id = :id";
+          $result = $this->db->getConn()->prepare($query);
+          $result->bindValue(':id', $id, \PDO::PARAM_STR);
+          $result->execute();
+          return $result->fetch(\PDO::FETCH_OBJ) ?? null;
+     }
+
      public function delete (int $id): bool
      {
           $user = $this->find($id);

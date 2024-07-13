@@ -28,7 +28,7 @@
                          
                <div class="container flex-column d-flex align-items-center justify-content-between gap-4 mb-5">
                     <div class="container d-flex align-items-center justify-content-between flex-row">
-                         <h2 class="align-self-start">Les <span style="border-bottom:2px solid blueViolet;">méd</span>icaments</h2>
+                         <h2 class="align-self-start" style="letter-spacing:2px">Les <span style="border-bottom:2px solid rgb(9,181, 9);">méd</span>icaments</h2>
                          <a href="/medicament/new" class="btn btn-secondary btn-sm">Nouveau</a>
                     </div>
                     <form action="" class="gap-2 align-self-start d-flex align-items-center justify-content-center flex-row">

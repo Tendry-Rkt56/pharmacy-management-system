@@ -83,6 +83,15 @@ class UserController extends Controller
           }
      }
 
+     public function profil (int $id)
+     {
+          $users = $this->app->getModel('user')->getOne($id);
+          return $this->render('user.profil', [
+               'users' => $users,
+               'id' => $id,
+          ]);
+     }
+
      public function logout ()
      {
           session_destroy();

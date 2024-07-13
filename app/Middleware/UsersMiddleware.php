@@ -26,6 +26,14 @@ class UsersMiddleware
                exit();
           }
      }
+
+     public function isAdmin ()
+     {
+          if (strtoupper($_SESSION['user']->roles) == "USER") {
+               header('Location: /error');
+               exit();
+          }
+     }
 }
 
 

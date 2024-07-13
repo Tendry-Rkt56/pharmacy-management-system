@@ -1,0 +1,115 @@
+body {
+     font-family: Arial, sans-serif;
+     background-color: #f4f5f7;
+     margin: 0;
+     padding: 0;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+ }
+ 
+ .container {
+     background-color: white;
+     padding: 20px;
+     border-radius: 8px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     width: 400px;
+ }
+ 
+ h1, h2 {
+     text-align: center;
+     color: #4caf50;
+ }
+ 
+ .form-group {
+     margin-bottom: 15px;
+ }
+ 
+ .medicament-group {
+     position: relative;
+     padding-bottom: 15px;
+ }
+ 
+ label {
+     display: block;
+     margin-bottom: 5px;
+     color: #333;
+ }
+ 
+ input[type="text"],
+ input[type="number"] {
+     width: calc(100% - 22px);
+     padding: 10px;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+     box-sizing: border-box;
+     margin-bottom: 5px;
+ }
+ 
+ button {
+     background-color: #4caf50;
+     color: white;
+     padding: 10px 20px;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+     width: 100%;
+     margin-top: 10px;
+ }
+ 
+ button[type="button"] {
+     width: auto;
+     background-color: #f44336;
+     margin-top: 0;
+ }
+ 
+ button:hover {
+     background-color: #45a049;
+ }
+ 
+ button[type="button"]:hover {
+     background-color: #d32f2f;
+ }
+ 
+ #salesList {
+     list-style-type: none;
+     padding: 0;
+ }
+ 
+ #salesList li {
+     background-color: #f9f9f9;
+     border: 1px solid #ddd;
+     padding: 10px;
+     margin-bottom: 5px;
+     border-radius: 4px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+ 
+ #salesList li i {
+     cursor: pointer;
+     color: #e74c3c;
+ }
+ 
+ .dropdown-content {
+     position: absolute;
+     background-color: #fff;
+     border: 1px solid #ddd;
+     border-radius: 4px;
+     max-height: 150px;
+     overflow-y: auto;
+     width: calc(100% - 22px);
+     display: none;
+     z-index: 1;
+ }
+ 
+ .dropdown-content li {
+     padding: 10px;
+     cursor: pointer;
+ }
+ 
+ .dropdown-content li:hover {
+     background-color: #f1f1f1;
+ }
