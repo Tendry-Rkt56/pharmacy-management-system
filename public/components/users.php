@@ -31,27 +31,27 @@
       	</div>
       	<ul class="nav-links">
         		<li>
-          		<a href="/users" class="<?php if (strlen($uri) < 1): ?>active<?php endif ?>">
+          		<a href="/users" id="users-lien" class="<?php if (strlen($uri) < 1): ?>active<?php endif ?>">
             			<i class="bx bx-grid-alt"></i>
-            			<span class="links_name">Accueil</span>
+            			<span class="links_name users">Accueil</span>
          			</a>
         		</li>
         		<li>
-          		<a href="/users/medicament" class="<?php if (str_contains($uri, 'medicament')): ?>active<?php endif ?>">
+          		<a href="/users/medicament" id="users-lien" class="<?php if (str_contains($uri, 'medicament')): ?>active<?php endif ?>">
             			<i class="bx bx-box"></i>
-            			<span class="links_name">Médicaments</span>
+            			<span class="links_name users">Médicaments</span>
           		</a>
         		</li>
         		<li>
-          		<a href="/users/category" class="<?php if (str_contains($uri, 'category')): ?>active<?php endif ?>">
+          		<a href="/users/category" id="users-lien" class="<?php if (str_contains($uri, 'category')): ?>active<?php endif ?>">
            			<i class="bx bx-list-ul"></i>
-            			<span class="links_name">Catégories</span>
+            			<span class="links_name users">Catégories</span>
           		</a>
         		</li>
         		<li>
-          		<a href="/users/listes" class="<?php if (str_contains($uri, 'user')): ?>active<?php endif ?>">
+          		<a href="/users/listes" id="users-lien" class="<?php if (str_contains($uri, 'user')): ?>active<?php endif ?>">
             			<i class="bx bx-pie-chart-alt-2"></i>
-            			<span class="links_name">Utilisateurs</span>
+            			<span class="links_name users">Utilisateurs</span>
           		</a>
         		</li>
         		<li>
