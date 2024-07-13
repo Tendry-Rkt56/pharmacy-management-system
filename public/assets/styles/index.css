@@ -69,11 +69,22 @@ header .auth {
 }
 
 .containers {
-     position:absolute;
-     top:15%;
-     width:100%;
-     left:0;
-}
+     position: absolute;
+     top:20%;
+     min-height: 100vh;
+     width: calc(100% - 240px);
+     left: 240px;
+     transition: all 0.5s ease;
+} 
+/* 
+.home-section{
+     position: relative;
+     background: #f5f5f5;
+     min-height: 100vh;
+     width: calc(100% - 240px);
+     left: 240px;
+     transition: all 0.5s ease;
+} */
 
 .ordonnance {
      opacity:0.9;

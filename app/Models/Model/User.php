@@ -44,7 +44,8 @@ class User extends Table
                $_SESSION['user'] = $user;
                return true;
           }
-          $_SESSION['danger'] = "Identifiants incorrects";
+          $_SESSION['email'] = $data['email'];
+          $_SESSION['error'] = "Identifiants incorrects";
           return false;
      }
 
@@ -118,6 +119,10 @@ class User extends Table
           $stmt->bindValue(':image', $this->checkImage($files['image'], $id), \PDO::PARAM_STR);
           $stmt->bindValue(':id', $id, \PDO::PARAM_INT);
           $_SESSION['success'] = "Votre profil a été modifiée";
+          $user =  $_SESSION['user'];
+          if ($user->id == $id) {
+               $_SESSION['user'] = $this->find($id);
+          }
           return $stmt->execute();
      }
 

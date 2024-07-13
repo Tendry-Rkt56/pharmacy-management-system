@@ -56,7 +56,7 @@ class UserController extends Controller
      {
           $registration = $this->app->getModel('user')->register($data, $files);
           if ($registration) {
-               header('Location: /medicament'); exit();
+               header('Location: /user'); exit();
           }
           else {
                header('Location: /new'); exit();
@@ -75,12 +75,19 @@ class UserController extends Controller
      {
           $update = $this->app->getModel('user')->update($id, $data, $files);
           if ($update) {
-               header('Location: /medicament'); exit();
+               header('Location: /user'); exit();
                exit();
           }
           else {
                header('Location: /user/edit/'.$id); exit();
           }
+     }
+
+     public function logout ()
+     {
+          session_destroy();
+          header('Location: /login');
+          exit();
      }
 
 }

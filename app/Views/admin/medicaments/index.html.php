@@ -6,6 +6,8 @@
      <title>Les medicaments</title>
      <link rel="stylesheet" href="/assets/styles/bootstrap.min.css">
      <link rel="stylesheet" href="/assets/styles/index.css">
+     <link rel="stylesheet" href="/assets/styles/style.css">
+     <script src="/assets/script/header.js" defer></script>
 </head>
 <body>
 

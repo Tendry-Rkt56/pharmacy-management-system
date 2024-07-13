@@ -12,10 +12,8 @@
 </head>
 
 <body style="background:whitesmoke;">
-     <?php  require_once 'components/header.php' ?>
      <section class="ftco-section">
           <div class="container">
-               <?php var_dump($_SESSION['danger'])?>
                <div class="row justify-content-center">
                     <div class="col-md-6 text-center mb-5">
                          <h2 class="heading-section">Connexion</h2>
@@ -27,6 +25,10 @@
                               <div class="img" style="background-image: url(/image/fond/fond-1.jpg);">
                               </div>
                               <div class="login-wrap p-4 p-md-5">
+                                   <?php if (isset($_SESSION['error'])): ?>
+                                        <p class="d-flex align-items-center justify-content-center container alert alert-danger"><?=$_SESSION['error']?></p>
+                                        <?php unset($_SESSION['error'])?>
+                                   <?php endif ?>
                                    <div class="d-flex">
                                         <div class="w-100">
                                              <h3 class="mb-4">Sign In</h3>
@@ -41,7 +43,7 @@
                                    <form action="" method="POST" class="signin-form">
                                         <div class="form-group mb-3">
                                              <label class="label" for="name">Username</label>
-                                             <input type="email" class="form-control" placeholder="Email..." name="email" required>
+                                             <input type="email" value="<?=$_SESSION['email'] ?? null?>" class="form-control" placeholder="Email..." name="email" required>
                                         </div>
                                         <div class="form-group mb-3">
                                              <label class="label" for="password">Password</label>

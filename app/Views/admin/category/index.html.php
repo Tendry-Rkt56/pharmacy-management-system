@@ -6,6 +6,8 @@
      <title>Document</title>
      <link rel="stylesheet" href="/assets/styles/index.css">
      <link rel="stylesheet" href="/assets/styles/bootstrap.min.css">
+     <link rel="stylesheet" href="/assets/styles/style.css">
+     <script src="/assets/script/header.js" defer></script>
 </head>
 <body>
 
@@ -22,12 +24,12 @@
                <?php endforeach?>
           <?php endif ?>
 
-          <div class="container d-flex align-items-center justify-content-between gap-1 my-4">
+          <div style="width:90%" class="container d-flex align-items-center justify-content-between gap-1 my-4">
                <h2>Les <span style="border-bottom:2px solid blueViolet;letter-spacing:3px">cat</span>égories</h2>
                <a href="/category/new" class="btn btn-secondary btn-sm">Ajouter une nouvelle catégorie</a>
           </div>
 
-          <table class="container table table-striped">
+          <table style="width:90%" class="container table table-striped table-bordered">
                <thead>
                     <tr>
                          <th>N°</th>

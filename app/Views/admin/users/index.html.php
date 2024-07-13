@@ -1,5 +1,4 @@
 <?php
-
      function classe ($user)
      {
           return strtoupper($user->roles) == "ADMIN" ? 'ordonnance no-required' : 'ordonnance required';
@@ -10,9 +9,6 @@
           return strtoupper($user->roles) == "ADMIN" ? 'Administrateur' : 'Utilisateur';
 
      }
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,6 +18,8 @@
      <title>Les medicaments</title>
      <link rel="stylesheet" href="/assets/styles/bootstrap.min.css">
      <link rel="stylesheet" href="/assets/styles/index.css">
+     <link rel="stylesheet" href="/assets/styles/style.css">
+     <script src="/assets/script/header.js" defer></script>
 </head>
 <body>
 
@@ -62,7 +60,7 @@
                <div class="container flex-column d-flex align-items-center justify-content-between gap-4 mb-5">
                     <div class="container d-flex align-items-center justify-content-between flex-row">
                          <h2 class="align-self-start">Les <span style="border-bottom:2px solid blueViolet;">uti</span>lisateurs</h2>
-                         <a href="/medicament/new" class="btn btn-secondary btn-sm">Nouveau</a>
+                         <a href="/user/new" class="btn btn-secondary btn-sm">Nouveau</a>
                     </div>
                     <form action="" class="gap-2 align-self-start d-flex align-items-center justify-content-center flex-row">
                          <input id="limit" type="number" class="form-control" value="<?=$limit?>" name="limit">

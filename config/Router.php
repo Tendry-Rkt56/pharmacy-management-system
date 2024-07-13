@@ -6,8 +6,12 @@ use App\Controller\ErrorController;
 use App\Controller\HomeController;
 use App\Controller\MedicamentController;
 use App\Controller\UserController;
+use App\Middleware\UsersMiddleware;
 
 require_once '../vendor/altorouter/altorouter/AltoRouter.php';
+
+$middleware = new UsersMiddleware();
+
 
 $router = new AltoRouter();
 
@@ -47,16 +51,17 @@ $router->map('GET', '/category/edit/[i:id]', fn ($id) => $container->getControll
 $router->map('POST', '/category/edit/[i:id]', fn ($id) => $container->getController(CategoryController::class)->update($id, $_POST));
 
 $router->map('POST', '/category/[i:id]', fn ($id) => $container->getController(CategoryController::class)->delete($id));
-
 // Routes pour les catégories
 
 $router->map('GET', '/login', fn () => $container->getController(UserController::class)->login());
 
 $router->map('POST', '/login', fn () => $container->getController(UserController::class)->authentication($_POST));
 
-$router->map('GET', 'user/new', fn () => $container->getController(UserController::class)->create());
+$router->map('POST', '/logout', fn () => $container->getController(UserController::class)->logout());
 
-$router->map('POST', 'user/new', fn () => $container->getController(UserController::class)->registration($_POST, $_FILES));
+$router->map('GET', '/user/new', fn () => $container->getController(UserController::class)->create());
+
+$router->map('POST', '/user/new', fn () => $container->getController(UserController::class)->registration($_POST, $_FILES));
 
 $router->map('GET', '/user/edit/[i:id]', fn ($id) => $container->getController(UserController::class)->edit($id));
 
