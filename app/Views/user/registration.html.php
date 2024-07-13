@@ -37,6 +37,14 @@
                               </select>
                          </div>
                     </div>
+                    <div class="container-fluid row">
+                         <div class="col-6 input-box">
+                              <input name="text" type="telephone" placeholder="Téléphone..." required>
+                         </div>
+                         <div class="col-6 input-box">
+                              <input name="text" type="adresse" placeholder="Adresse...">
+                         </div>
+                    </div>
                     <div class="row container-fluid">
                          <div class="col-6 input-box">
                               <input name="password" type="password" placeholder="Password..." required>

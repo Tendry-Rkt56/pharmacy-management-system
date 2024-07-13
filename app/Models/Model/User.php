@@ -51,7 +51,7 @@ class User extends Table
 
      public function register (array $data = [], array $files = [])
      {
-          $sql = "INSERT INTO users(nom, prenom, email, roles, password, image) VALUES (:nom, :prenom, :email, :role, :password, :image)";
+          $sql = "INSERT INTO users(nom, prenom, email, roles, password, image, telephone, adresse) VALUES (:nom, :prenom, :email, :role, :password, :image, :telephone, :adresse)";
           $query = $this->db->getConn()->prepare($sql);
           extract($data);
           $query->bindValue(':nom', $nom, \PDO::PARAM_STR);
@@ -59,6 +59,8 @@ class User extends Table
           $query->bindValue(':email', $email, \PDO::PARAM_STR);
           $query->bindValue(':image', $this->checkImage($files['image']), \PDO::PARAM_STR);
           $query->bindValue(':role', $roles, \PDO::PARAM_STR);
+          $query->bindValue(':telephone', $telephone, \PDO::PARAM_STR);
+          $query->bindValue(':adresse', $adresse, \PDO::PARAM_STR);
           $query->bindValue(':password', password_hash($password, PASSWORD_DEFAULT), \PDO::PARAM_STR);
 
           return $query->execute();
@@ -110,12 +112,14 @@ class User extends Table
 
      public function update (int $id, array $data = [], array $files = [])
      {
-          $stmt = $this->db->getConn()->prepare("UPDATE users SET nom = :nom, prenom = :prenom, email = :email, password = :password, image = :image WHERE id = :id");
+          $stmt = $this->db->getConn()->prepare("UPDATE users SET nom = :nom, prenom = :prenom, email = :email, password = :password, image = :image, telephone = :telephone, adresse = :adresse WHERE id = :id");
           $password = password_hash($data['password'], PASSWORD_DEFAULT);
           $stmt->bindValue(':nom', $data['nom'], \PDO::PARAM_STR);
           $stmt->bindValue(':prenom', $data['prenom'], \PDO::PARAM_STR);
           $stmt->bindValue(':email', $data['email'], \PDO::PARAM_STR);
           $stmt->bindValue(':password', $password, \PDO::PARAM_STR);
+          $stmt->bindValue(':telephone', $data['telephone'], \PDO::PARAM_STR);
+          $stmt->bindValue(':adresse', $data['adresse'], \PDO::PARAM_STR);
           $stmt->bindValue(':image', $this->checkImage($files['image'], $id), \PDO::PARAM_STR);
           $stmt->bindValue(':id', $id, \PDO::PARAM_INT);
           $_SESSION['success'] = "Votre profil a été modifiée";

@@ -39,7 +39,7 @@ class UserController extends Controller
                     header('Location: /'); exit();
                }
                else {
-                    header('Location: /medicament'); exit(); 
+                    header('Location: /users'); exit(); 
                }
           }
           else {
@@ -63,23 +63,22 @@ class UserController extends Controller
           }
      }
 
-     public function edit (int $id)
+     public function edit ()
      {
-          $user = $this->app->getModel('user')->find($id);
           return $this->render('user.edit', [
-               'user' => $user,
+               'user' => $_SESSION['user'],
           ]);
      }
 
-     public function update (int $id, array $data = [], array $files = []) 
+     public function update (array $data = [], array $files = []) 
      {
-          $update = $this->app->getModel('user')->update($id, $data, $files);
+          $update = $this->app->getModel('user')->update($_SESSION['user']->id, $data, $files);
           if ($update) {
                header('Location: /user'); exit();
                exit();
           }
           else {
-               header('Location: /user/edit/'.$id); exit();
+               header('Location: /user/edit'); exit();
           }
      }
 
@@ -88,7 +87,7 @@ class UserController extends Controller
           $users = $this->app->getModel('user')->getOne($id);
           return $this->render('user.profil', [
                'users' => $users,
-               'id' => $id,
+               'id' => $_SESSION['user']->id,
           ]);
      }
 

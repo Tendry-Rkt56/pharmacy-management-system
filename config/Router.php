@@ -6,6 +6,7 @@ use App\Controller\ErrorController;
 use App\Controller\HomeController;
 use App\Controller\MedicamentController;
 use App\Controller\UserController;
+use App\Controller\UsersController;
 use App\Middleware\UsersMiddleware;
 
 require_once '../vendor/altorouter/altorouter/AltoRouter.php';
@@ -109,14 +110,14 @@ $router->map('POST', '/user/new', function () use ($container, $middleware) {
      $container->getController(UserController::class)->registration($_POST, $_FILES);
 });
 
-$router->map('GET', '/user/edit/[i:id]', function ($id) use ($container, $middleware) {
+$router->map('GET', '/user/edit', function () use ($container, $middleware) {
      $middleware->isAdmin();
-     $container->getController(UserController::class)->edit($id);
+     $container->getController(UserController::class)->edit();
 });
 
-$router->map('POST', '/user/edit/[i:id]', function ($id) use ($container, $middleware) {
+$router->map('POST', '/user/edit', function () use ($container, $middleware) {
      $middleware->isAdmin();
-     $container->getController(UserController::class)->update($id, $_POST, $_FILES);
+     $container->getController(UserController::class)->update($_POST, $_FILES);
 });
 
 $router->map('GET', '/user', function () use ($container, $middleware) {
@@ -136,10 +137,35 @@ $router->map('GET', '/users', function () use ($container) {
      $container->getController(HomeController::class)->index();
 });
 
+$router->map('GET', '/users/medicaments', function () use ($container) {
+     $container->getController(UsersController::class)->medicaments($_GET);
+});
+
+$router->map('GET', '/users/categories', function () use ($container) {
+     $container->getController(UsersController::class)->category($_GET);
+});
+
+$router->map('GET', '/users/profil/[i:id]', function ($id) use ($container) {
+     $container->getController(UsersController::class)->vueProfil($id);
+});
+
+$router->map('GET', '/users/profil/edit', function () use ($container) {
+     $container->getController(UsersController::class)->editProfil();
+});
+
+$router->map('POST', '/users/profil/edit', function () use ($container) {
+     $container->getController(UsersController::class)->updateProfil($_POST, $_FILES);
+});
+
+$router->map('GET', '/users/listes', function () use ($container) {
+     $container->getController(UsersController::class)->users($_GET);
+});
+
 $router->map('GET', '/error', function () use ($container) {
      $container->getController(ErrorController::class)->accessDenied();
 });
 
+//---------------------------------------------------------------------------------------
 
 $match = $router->match();
 if ($match !== null) {

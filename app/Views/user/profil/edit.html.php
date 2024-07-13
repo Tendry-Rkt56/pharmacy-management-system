@@ -13,10 +13,10 @@
 </head>
 
 <body>
-     <?php  require_once 'components/header.php' ?>
+     <?php  require_once 'components/users.php' ?>
      <div class="registration">
           <div class="wrapper">
-               <h2>Registration</h2>
+               <h2>Edition</h2>
                <?php if (isset($user->image)) : ?>
                     <img src="/<?= $user->image ?>" class="mt-2 mb-3" alt="" style="text-align:center;height:60px;width:60px;border-radius:50%;">
                <?php endif ?>

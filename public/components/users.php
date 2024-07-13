@@ -27,29 +27,29 @@
     	<div class="sidebar sidebars">
       	<div class="logo-details">
         		<i class="bx bxs-bank"></i>
-        		<span class="logo_name"> Admin </span>
+        		<span class="logo_name"> Utilisateur </span>
       	</div>
       	<ul class="nav-links">
         		<li>
-          		<a href="/users" id="users-lien" class="<?php if (strlen($uri) < 1): ?>active<?php endif ?>">
+          		<a href="/users" id="users-lien" class="<?php if ($uri == '/users'): ?>active<?php endif ?>">
             			<i class="bx bx-grid-alt"></i>
             			<span class="links_name users">Accueil</span>
          			</a>
         		</li>
         		<li>
-          		<a href="/users/medicament" id="users-lien" class="<?php if (str_contains($uri, 'medicament')): ?>active<?php endif ?>">
+          		<a href="/users/medicaments" id="users-lien" class="<?php if (str_contains($uri, '/medicament')): ?>active<?php endif ?>">
             			<i class="bx bx-box"></i>
             			<span class="links_name users">Médicaments</span>
           		</a>
         		</li>
         		<li>
-          		<a href="/users/category" id="users-lien" class="<?php if (str_contains($uri, 'category')): ?>active<?php endif ?>">
+          		<a href="/users/categories" id="users-lien" class="<?php if (str_contains($uri, '/categories')): ?>active<?php endif ?>">
            			<i class="bx bx-list-ul"></i>
             			<span class="links_name users">Catégories</span>
           		</a>
         		</li>
         		<li>
-          		<a href="/users/listes" id="users-lien" class="<?php if (str_contains($uri, 'user')): ?>active<?php endif ?>">
+          		<a href="/users/listes" id="users-lien" class="<?php if (str_contains($uri, '/listes')): ?>active<?php endif ?>">
             			<i class="bx bx-pie-chart-alt-2"></i>
             			<span class="links_name users">Utilisateurs</span>
           		</a>
@@ -75,7 +75,7 @@
           		<i class="bx bx-menu sidebarBtn"></i>
           		<h3><span class="dashboard">PHA</span>RM</h3>
         		</div>
-        		<div class="profile-details">
+        		<a style="text-decoration: none;" href="/users/profil/<?=$_SESSION['user']->id?>" class="profile-details">
 				<?php if (isset($_SESSION['user']))
 					$user = $_SESSION['user'];
 				?>
@@ -88,6 +88,6 @@
 				<?php endif ?>
           		<span class="admin_name"><?=$user->nom?> <?=$user->prenom?></span>
           		<i class="bx bx-chevron-down"></i>
-        		</div>
+        		</a>
       	</nav>
     </section>

@@ -79,7 +79,7 @@
 				<a href="/">Administration</a>
 				<a href="/users">Utilisateur</a>
 			</div>
-        		<div class="profile-details">
+        		<a style="text-decoration:none;" href="/user/<?=$_SESSION['user']->id?>" class="profile-details">
 				<?php if (isset($_SESSION['user']))
 					$user = $_SESSION['user'];
 				?>
@@ -92,6 +92,6 @@
 				<?php endif ?>
           		<span class="admin_name"><?=$user->nom?> <?=$user->prenom?></span>
           		<i class="bx bx-chevron-down"></i>
-        		</div>
+        		</a>
       	</nav>
     </section>

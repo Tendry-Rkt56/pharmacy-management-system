@@ -19,7 +19,12 @@
 </head>
 
 <body>
-    <?php require_once 'components/header.php'?>
+    <?php require_once 'components/users.php'?>
+    <div class="container">
+        <?php if (isset($_SESSION['success'])): ?>
+            <div class="d-flex align-items-center justify-content-center"><?=$_SESSION['success']?></div>
+        <?php endif ?>
+    </div>
     <div class="containers">
         <div class="profile-card">
             <div class="profile-content">
@@ -46,7 +51,7 @@
                     </div>
                 </div>
                 <?php if ($users->id == $id): ?>
-                    <a href="/user/edit" class="show-more">Editer</a>
+                    <a href="/users/profil/edit" class="show-more">Editer</a>
                 <?php endif ?>
             </div>
         </div>
