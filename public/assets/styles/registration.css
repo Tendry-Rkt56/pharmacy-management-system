@@ -11,8 +11,7 @@
   position: absolute;
   top:15%;
   max-height:100vh;
-  width: calc(100% - 240px);
-  left: 30%;
+  left: 20%;
   transition: all 0.5s ease;
   
 }

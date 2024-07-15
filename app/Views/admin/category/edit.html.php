@@ -6,12 +6,14 @@
      <title><?=$category->nom?></title>
      <link rel="stylesheet" href="/assets/styles/index.css">
      <link rel="stylesheet" href="/assets/styles/bootstrap.min.css">
+     <link rel="stylesheet" href="/assets/styles/style.css">
+     <script src="/assets/script/header.js" defer></script>
 </head>
 <body>
      
      <?php require_once 'components/header.php' ?>
 
-     <form enctype="multipart/form-data" class="forms-create container-md d-flex align-items-center justify-content-center flex-column" action="" method="POST">
+     <form enctype="multipart/form-data" class="forms-update d-flex align-items-center justify-content-center flex-column" action="" method="POST">
           <h3 class="mb-4" ><?=$category->nom?></h3>
           <div class="d-flex align-items-center justify-content-center container-fluid">
                <label style="width:30%" for="" class="fw-bolder">Nom: </label>

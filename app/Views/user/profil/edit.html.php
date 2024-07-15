@@ -8,13 +8,13 @@
      <title> Création d'utilisateur </title>
      <link rel="stylesheet" href="/assets/styles/registration.css">
      <link rel="stylesheet" href="/assets/styles/bootstrap.min.css">
-     <link rel="stylesheet" href="/assets/styles/style.css">
+     <link rel="stylesheet" href="/assets/styles/header.css">
      <script src="/assets/header.js" defer></script>
 </head>
 
 <body>
      <?php  require_once 'components/users.php' ?>
-     <div class="registration">
+     <div class="registration container">
           <div class="wrapper">
                <h2>Edition</h2>
                <?php if (isset($user->image)) : ?>

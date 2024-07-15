@@ -30,7 +30,6 @@
                <div class="container flex-column d-flex align-items-center justify-content-between gap-4 mb-5">
                     <div class="container d-flex align-items-center justify-content-between flex-row">
                          <h2 class="align-self-start" style="letter-spacing:2px">Les <span style="border-bottom:2px solid rgb(9,181, 9);">Ac</span>hats</h2>
-                         <a href="/medicament/new" class="btn btn-secondary btn-sm">Nouveau</a>
                     </div>
                </div>
                                    
@@ -56,9 +55,9 @@
                                    <td style="text-align:center;"><?=$formattedDate?></td>
                                    <td>
                                         <div class="d-flex">
-                                             <a href="/users/details/<?=$achat->id?>" class="mx-1 btn btn-primary">Détails</a>
-                                             <form method="" action="/achat/delete/<?=$achat->id?>">
-                                                  <input type="submit" class="btn btn-danger" value="Supprimer">
+                                             <a href="/details/<?=$achat->id?>" class="mx-1 btn btn-primary">Détails</a>
+                                             <form method="POST" action="/vente/delete/<?=$achat->id?>">
+                                                  <input type="submit" class="btn btn-danger" value="delte">
                                              </form>
                                         </div>
                                    </td>
@@ -72,7 +71,7 @@
                     <div class="d-flex justify-content-center flex-row gap-1 align-items-center">
                          <?php for($i = 1; $i <= $maxPages; $i++): ?>
                               <?php $class = $i == $page ? 'btn-primary' : 'btn-outline-primary' ?>
-                              <a style="border-radius:50%;border:none" class="btn <?=$class?>" href="/achat?page=<?=$i?>"><?=$i?></a>
+                              <a style="border-radius:50%;border:none" class="btn <?=$class?>" href="/ventes?page=<?=$i?>"><?=$i?></a>
                          <?php endfor ?>
                     </div>
                </div>

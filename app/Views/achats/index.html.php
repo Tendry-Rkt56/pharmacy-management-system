@@ -7,7 +7,7 @@
      <title>Les medicaments</title>
      <link rel="stylesheet" href="/assets/styles/bootstrap.min.css">
      <link rel="stylesheet" href="/assets/styles/index.css">
-     <link rel="stylesheet" href="/assets/styles/style.css">
+     <link rel="stylesheet" href="/assets/styles/header.css">
      <script src="/assets/script/header.js" defer></script>
 </head>
 <body>
@@ -15,7 +15,7 @@
      <?php require_once 'components/users.php' ?>
 
 
-     <div class="containers">
+     <div class="users-container container">
           <div class='container d-flex align-items-center justify-content-center flex-column'>
 
                <?php if (isset($_SESSION)): ?>
@@ -29,8 +29,8 @@
                          
                <div class="container flex-column d-flex align-items-center justify-content-between gap-4 mb-5">
                     <div class="container d-flex align-items-center justify-content-between flex-row">
-                         <h2 class="align-self-start" style="letter-spacing:2px">Les <span style="border-bottom:2px solid rgb(9,181, 9);">méd</span>icaments</h2>
-                         <a href="/medicament/new" class="btn btn-secondary btn-sm">Nouveau</a>
+                         <h2 class="align-self-start" style="letter-spacing:2px">Les <span style="border-bottom:2px solid rgb(9,181, 9);">ve</span>ntes</h2>
+                         <a href="/users/vente/new" class="btn btn-secondary btn-sm">Nouveau</a>
                     </div>
                </div>
                                    
@@ -69,7 +69,7 @@
                     <div class="d-flex justify-content-center flex-row gap-1 align-items-center">
                          <?php for($i = 1; $i <= $maxPages; $i++): ?>
                               <?php $class = $i == $page ? 'btn-primary' : 'btn-outline-primary' ?>
-                              <a style="border-radius:50%;border:none" class="btn <?=$class?>" href="/achat?page=<?=$i?>"><?=$i?></a>
+                              <a style="border-radius:50%;border:none" class="btn <?=$class?>" href="/users/vente?page=<?=$i?>"><?=$i?></a>
                          <?php endfor ?>
                     </div>
                </div>

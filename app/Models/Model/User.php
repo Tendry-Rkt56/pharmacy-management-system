@@ -122,7 +122,6 @@ class User extends Table
           $stmt->bindValue(':adresse', $data['adresse'], \PDO::PARAM_STR);
           $stmt->bindValue(':image', $this->checkImage($files['image'], $id), \PDO::PARAM_STR);
           $stmt->bindValue(':id', $id, \PDO::PARAM_INT);
-          $_SESSION['success'] = "Votre profil a été modifiée";
           $user =  $_SESSION['user'];
           if ($user->id == $id) {
                $_SESSION['user'] = $this->find($id);
@@ -147,6 +146,7 @@ class User extends Table
           }
           $stmt = $this->db->getConn()->prepare("DELETE FROM users WHERE id = :id");
           $stmt->bindValue(":id", $id);
+          $_SESSION['danger'] = "Utilisateur N°$id supprimé";
           return $stmt->execute();
      }
 

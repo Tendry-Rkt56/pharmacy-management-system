@@ -7,3 +7,12 @@ sidebarBtn.onclick = function () {
 	} 
 	else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
 }
+
+const select = document.getElementById('select')
+
+if (select) {
+	select.addEventListener('change', (e) => {
+		if (e.target.value == "admin") window.location.href = "/"
+		else window.location.href = "/users"
+	})
+}

@@ -68,6 +68,12 @@ header .auth {
      width:10%;
 }
 
+.users-container {
+     position:absolute;
+     top:20%;
+     left:7%;
+}
+
 .containers {
      position: absolute;
      top:15%;
@@ -119,6 +125,16 @@ header .auth {
      box-shadow:0 0 4px rgba(0,0,0,0.2);
      padding:10px 20px;
      height:300px;
+}
+
+.forms-update {
+     width:400Px;
+     position:fixed;
+     top:50%;
+     left:50%;
+     transform:translate(-50%,-50%);
+     box-shadow:0 0 4px rgba(0,0,0,0.2);
+     padding: 20px 30px;
 }
 
 .forms-create {

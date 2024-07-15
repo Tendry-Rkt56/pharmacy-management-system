@@ -59,14 +59,15 @@ class UserController extends Controller
                header('Location: /user'); exit();
           }
           else {
-               header('Location: /new'); exit();
+               header('Location: user/new'); exit();
           }
      }
 
      public function edit ()
      {
+          $user = $this->app->getModel('user')->getOne($_SESSION['user']->id);
           return $this->render('user.edit', [
-               'user' => $_SESSION['user'],
+               'user' => $user
           ]);
      }
 
@@ -96,6 +97,15 @@ class UserController extends Controller
           session_destroy();
           header('Location: /login');
           exit();
+     }
+
+     public function delete (int $id)
+     {
+          $delete = $this->app->getModel('user')->delete($id);
+          $this->app->getModel('achat')->deleteWithUser($id);
+          if ($delete) {
+               header('Location: /user'); exit();
+          }
      }
 
 }

@@ -39,10 +39,10 @@
                     </div>
                     <div class="container-fluid row">
                          <div class="col-6 input-box">
-                              <input name="text" type="telephone" placeholder="Téléphone..." required>
+                              <input name="telephone" type="text" placeholder="Téléphone..." required>
                          </div>
                          <div class="col-6 input-box">
-                              <input name="text" type="adresse" placeholder="Adresse...">
+                              <input type="text" name="adresse" placeholder="Adresse...">
                          </div>
                     </div>
                     <div class="row container-fluid">

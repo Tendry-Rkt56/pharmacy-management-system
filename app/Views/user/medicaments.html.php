@@ -6,7 +6,7 @@
      <title>Les medicaments</title>
      <link rel="stylesheet" href="/assets/styles/bootstrap.min.css">
      <link rel="stylesheet" href="/assets/styles/index.css">
-     <link rel="stylesheet" href="/assets/styles/style.css">
+     <link rel="stylesheet" href="/assets/styles/header.css">
      <script src="/assets/script/header.js" defer></script>
 </head>
 <body>
@@ -14,7 +14,7 @@
      <?php require_once 'components/users.php' ?>
 
 
-     <div class="containers">
+     <div class="users-container container">
           <div class='container d-flex align-items-center justify-content-center flex-column'>
 
                <?php if (isset($_SESSION)): ?>

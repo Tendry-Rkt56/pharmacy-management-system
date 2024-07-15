@@ -25,16 +25,17 @@
      	         <p><?=$categories?></p>
      	         <span>Gérer les catégories</span>
      	     </a>
-     	     <a style="text-decoration: none;" href="/users" class="card purple">
+     	     <a style="text-decoration: none;" href="/user" class="card purple">
      	         <h3>Utilisateurs</h3>
      	         <p><?=$users?></p>
      	         <span>Gérer les utilisateurs</span>
      	     </a>
-     	     <div class="card green">
-     	         <h3>Net Profit Margin</h3>
-     	         <p>$179,000</p>
-     	         <span>Saved 65%</span>
-     	     </div>
+     	     <a style="text-decoration:none;" href="/ventes" class="card green">
+     	         <h3>Ventes</h3>
+			    <i style="color:white">Les 5 dérnières ventes: </i>
+     	         <p class="fw-bolder"><?=number_format($ventes, thousands_separator: ' ')?> Ar</p>
+     	         <span>Gérer les ventes</span>
+     	     </a>
      	</div>
 		<div class="table-data">
 			<div class="order">
@@ -70,11 +71,11 @@
                                    	?>
 								<td><?=$formattedDate?></td>
 								<td>
-									<span class="status <?=$achat->isEffectue == 1 ? 'completed' : 'pending'?>">
-										<?=$achat->isEffectue == 0 ? 'Occured' : 'Completed'?>
+									<span class="status pending">
+										completed
 									</span>
 								</td>
-								<td><a class="btn btn-sm btn-primary" href="/achat/details/<?=$achat->id?>">Détails</a></td>
+								<td><a class="btn btn-sm btn-primary" href="/details/<?=$achat->id?>">Détails</a></td>
 							</tr>
 						<?php endforeach ?>
 					</tbody>

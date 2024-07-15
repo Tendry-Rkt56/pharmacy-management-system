@@ -8,12 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Facture</title>
     <link rel="stylesheet" href="/assets/styles/details.css">
-    <link rel="stylesheet" href="/assets/styles/header.css">
+    <link rel="stylesheet" href="/assets/styles/style.css">
     <link rel="stylesheet" href="/assets/styles/bootstrap.min.css">
     <script src="/components/header.js" defer></script>
 </head>
 <body>
-     <?php require_once 'components/users.php'?>
+     <?php require_once 'components/header.php'?>
      <div class="invoice-box">
           <header>
               <h1>FACTURE</h1>

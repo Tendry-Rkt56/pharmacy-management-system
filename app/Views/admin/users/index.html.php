@@ -113,7 +113,7 @@
                                    <td>
                                         <div class="d-flex">
                                              <a href="/user/<?=$user->id?>" class="mx-1 btn btn-sm btn-primary">Profil</a>
-                                             <form action="/user/<?=$user->id?>" method="POST">
+                                             <form action="/user/delete/<?=$user->id?>" method="POST">
                                                   <input type="submit" class="btn btn-danger btn-sm" value="Supprimer">
                                              </form>
                                         </div>

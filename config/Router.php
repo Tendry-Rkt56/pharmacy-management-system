@@ -3,6 +3,7 @@
 use App\Container;
 use App\Controller\AchatController;
 use App\Controller\AdminController;
+use App\Controller\APIController;
 use App\Controller\CategoryController;
 use App\Controller\ErrorController;
 use App\Controller\HomeController;
@@ -132,18 +133,29 @@ $router->map('GET', '/user/[i:id]', function ($id) use ($container, $middleware)
      $container->getController(UserController::class)->profil($id);
 });
 
+$router->map('POST', '/user/delete/[i:id]', function ($id) use ($container, $middleware) {
+     $middleware->isAdmin();
+     $container->getController(UserController::class)->delete($id);
+});
+
 // Routes pour les catégories
 // Routes pour les achats
 
-$router->map('GET', '/achat', function () use ($container, $middleware) {
+$router->map('GET', '/ventes', function () use ($container, $middleware) {
      $middleware->isAdmin();
      $container->getController(AdminController::class)->achats($_GET);
 });
 
-$router->map('GET', '/achat/details/[i:id]', function ($id) use ($container, $middleware) {
+$router->map('GET', '/details/[i:id]', function ($id) use ($container, $middleware) {
      $middleware->isAdmin();
-     $container->getController(AchatController::class)->details($id);
+     $container->getController(AdminController::class)->details($id);
 });
+
+$router->map('POST', '/vente/delete/[i:id]', function ($id) use ($container, $middleware) {
+     $middleware->isAdmin();
+     $container->getController(AchatController::class)->delete($id);
+});
+
 
 // Routes pour les achats
 
@@ -184,9 +196,28 @@ $router->map('GET', '/error', function () use ($container) {
 //---------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------
-$router->map('GET', '/users/achat', function () use ($container) {
-     $container->getController(AchatController::class)->index();
+$router->map('GET', '/users/vente', function () use ($container) {
+     $container->getController(AchatController::class)->index($_GET);
 });
+
+$router->map('GET', '/users/details/[i:id]', function ($id) use ($container) {
+     $container->getController(AchatController::class)->details($id);
+});
+
+$router->map('GET', '/users/vente/new', function () use ($container) {
+     $container->getController(AchatController::class)->create();
+});
+
+$router->map('POST', '/users/vente/new', function () use ($container) {
+     $container->getController(AchatController::class)->store($_POST);
+});
+//-------------------------------------------------------------------
+
+// Routes pour les API
+$router->map('GET', '/API/medicament', function () use ($container) {
+     $container->getController(APIController::class)->medicament($_GET);
+});
+// Routes pour les API
 
 
 $match = $router->match();

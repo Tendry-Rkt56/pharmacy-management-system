@@ -1,0 +1,136 @@
+.home-section{
+     padding:10px;
+     display:flex;
+     align-items:center;
+     justify-content: space-between;
+     flex-direction:row;
+     position: fixed;
+     top:0;
+     left:0;
+     background: #ffff;
+     width: 100%;
+     transition: all 0.5s ease;
+     box-shadow: 0 0 10px rgba(0,0,0,0.2);
+     z-index:1;
+}
+
+.home-section .sidebar-button{
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.home-section .sidebar-button i{
+  font-size: 35px;
+  margin-right: 10px;
+}
+
+.dashboard {
+  color:rgb(9, 181, 9);
+}
+
+.sidebar-button h3 {
+  letter-spacing:3px;
+}
+
+.admins .liens {
+     text-decoration:none;
+     color:#262626;
+     font-size:14px;
+}
+   
+.admins .liens:hover {
+  color:#1cc88a;
+}
+
+.admins .liens.active {
+     color:green;
+}
+
+.home-section .profile-details{
+  display: flex;
+  align-items: center;
+  background: #F5F6FA;
+  border: 2px solid #EFEEF1;
+  border-radius: 6px;
+  height: 50px;
+  min-width: 190px;
+  padding: 0 15px 0 2px;
+}
+.profile-details img{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.profile-details .admin_name{
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  margin: 0 10px;
+  white-space: nowrap;
+}
+.profile-details i{
+  font-size: 25px;
+  color: #333;
+}
+
+.dashboards {
+     position: absolute;
+     top:50%;
+     left:50%;
+     transform: translate(-50%, -50%);
+     width:80%;
+}
+
+.cards {
+     display: flex;
+     justify-content: space-between;
+     flex-wrap: wrap;
+     margin: 20px 0;
+}
+
+.card {
+     flex: 1;
+     margin: 10px;
+     padding: 20px;
+     border-radius: 10px;
+     color: #fff;
+     text-align: center;
+     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card.blue {
+     background-color: #4e73df;
+}
+
+.card.light-blue {
+     background-color: #36b9cc;
+}
+
+.card.purple {
+     background-color: #6f42c1;
+}
+
+.card.green {
+     background-color: #1cc88a;
+}
+
+.card h3 {
+     color: #fff;
+     margin-top: 0;
+     font-size: 1.2em;
+}
+
+.card p {
+     color: #fff;
+     font-size: 2em;
+     margin: 10px 0;
+}
+
+.card span {
+  color: #fff;
+  font-size: 0.9em;
+}
+   

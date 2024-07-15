@@ -24,4 +24,14 @@ class AdminController extends Controller
           ]);
      }
 
+     public function details (int $id)
+     {
+          $detail = $this->app->getModel('achat')->details($id);
+          $achat = $this->app->getModel('achat')->find($id);
+          return $this->render('admin.achats.details', [
+               'details' => $detail,
+               'achat' => $achat,
+          ]);
+     }
+
 }
