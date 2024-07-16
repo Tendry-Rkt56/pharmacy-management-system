@@ -15,4 +15,4 @@ if (select) {
 		if (e.target.value == "admin") window.location.href = "/"
 		else window.location.href = "/users"
 	})
-}
+}	
