@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", function() {
           fetchSuggestions(premier.value, suggestions, price, premier, nombre);
      })
 
-     // Ajouter un groupe de médicaments initial
-     addMedicamentGroup();
+    //  // Ajouter un groupe de médicaments initial
+    //  addMedicamentGroup();
  
      // Ajouter un groupe de médicaments supplémentaire
      document.getElementById("addMedicament").addEventListener("click", addMedicamentGroup);
@@ -77,33 +77,17 @@ document.addEventListener("DOMContentLoaded", function() {
              });
      }
  
-     // saleForm.addEventListener("submit", function(event) {
-     //     event.preventDefault();
- 
-     //     const medicamentGroups = document.querySelectorAll(".medicament-group");
-     //     let confirmationMessage = "Confirmez-vous l'enregistrement de la vente :\n";
- 
-     //     medicamentGroups.forEach(group => {
-     //         const medicament = group.querySelector(".medicament").value;
-     //         const prix = group.querySelector(".prix").value;
-     //         confirmationMessage += `Médicament : ${medicament}, Prix : ${prix} €\n`;
-     //     });
- 
-     //     if (confirm(confirmationMessage)) {
-     //         medicamentGroups.forEach(group => {
-     //             const medicament = group.querySelector(".medicament").value;
-     //             const prix = group.querySelector(".prix").value;
-     //             const li = document.createElement("li");
-     //             li.innerHTML = `${medicament} - ${prix} € <i class="fas fa-trash-alt"></i>`;
-     //             salesList.appendChild(li);
- 
-     //             li.querySelector("i").addEventListener("click", function() {
-     //                 li.remove();
-     //             });
- 
-     //             group.remove();
-     //         });
-     //         addMedicamentGroup(); // Ajouter un premier groupe vide
-     //     }
-     // });
+    // saleForm.addEventListener("submit", function(event) {
+    //     event.preventDefault();
+
+    //     const medicamentGroups = document.querySelectorAll(".medicament-group");
+
+    //     const allInput = []
+
+    //     medicamentGroups.forEach(element => {
+    //         const medicamentInput = element.querySelector('.medicament')
+    //         allInput.push(medicamentInput)
+    //     })
+
+    // });
  });
