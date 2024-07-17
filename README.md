@@ -38,7 +38,7 @@ Ce projet est une application de gestion de pharmacie développée en PHP et Jav
 
 ## Installation
 - Excécution du Fichier SQL :
-    Pour initialiser votre base de données avec le schéma et les données nécessaires, exécutez le fichier 'crud.sql' situé à la racine du projet dans votre SGBD 	 
+    Pour initialiser votre base de données avec le schéma et les données nécessaires, exécutez le fichier `pharmacie.sql` situé à la racine du projet dans votre SGBD 	 
 
 - Modifier le fichier Constante.php dans le dossier config/ :
      ![illustration](public/image/code.png)
