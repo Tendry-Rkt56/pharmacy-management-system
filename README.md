@@ -50,13 +50,13 @@ Ce projet est une application de gestion de pharmacie développée en PHP et Jav
     - Ou démarrer votre serveur de développement (xampp, wampp, ...)
 
 ## Illustrations
-![Illustration 1](public/illustrations/1.png)
+![Illustration 1](public/image/illustrations/1.png)
 
-![Illustration 1](public/illustrations/2.png)
+![Illustration 1](public/image/illustrations/2.png)
 
-![Illustration 1](public/illustrations/3.png)
+![Illustration 1](public/image/illustrations/3.png)
 
-![Illustration 1](public/illustrations/4.png)
+![Illustration 1](public/image/illustrations/4.png)
 
 
 ## Contributions
