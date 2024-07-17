@@ -31,7 +31,7 @@ CREATE TABLE `achat` (
   PRIMARY KEY (`id`),
   KEY `fk_user` (`user_id`),
   CONSTRAINT `fk_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,12 @@ CREATE TABLE `achat` (
 LOCK TABLES `achat` WRITE;
 /*!40000 ALTER TABLE `achat` DISABLE KEYS */;
 INSERT INTO `achat` VALUES
-(26,'2024-07-15 14:56:32',162000,7,0);
+(26,'2024-07-15 14:56:32',162000,7,0),
+(29,'2024-07-16 10:10:35',16000,6,0),
+(30,'2024-07-17 17:12:54',816000,6,0),
+(31,'2024-07-17 17:13:30',1625000,6,0),
+(32,'2024-07-17 17:13:54',20000,6,0),
+(33,'2024-07-17 17:14:33',1860000,6,0);
 /*!40000 ALTER TABLE `achat` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -94,7 +99,7 @@ CREATE TABLE `details` (
   KEY `achat_id` (`achat_id`),
   CONSTRAINT `details_ibfk_1` FOREIGN KEY (`medicament_id`) REFERENCES `medicament` (`id`) ON DELETE CASCADE,
   CONSTRAINT `details_ibfk_2` FOREIGN KEY (`achat_id`) REFERENCES `achat` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -105,7 +110,17 @@ LOCK TABLES `details` WRITE;
 /*!40000 ALTER TABLE `details` DISABLE KEYS */;
 INSERT INTO `details` VALUES
 (36,15,21,26),
-(37,16,10,26);
+(37,16,10,26),
+(40,8,5,29),
+(41,9,2,29),
+(42,37,8,30),
+(43,32,50,30),
+(44,27,4,30),
+(45,32,101,31),
+(46,33,10,31),
+(47,8,10,32),
+(48,16,80,33),
+(49,22,100,33);
 /*!40000 ALTER TABLE `details` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -138,36 +153,36 @@ LOCK TABLES `medicament` WRITE;
 INSERT INTO `medicament` VALUES
 (1,'Ciprofloxacine',7000,1,1,3998),
 (7,'Amoxicilline',5000,1,1,3998),
-(8,'Paracétamol',2000,0,2,4000),
-(9,'Ibuprofène',3000,0,2,4000),
+(8,'Paracétamol',2000,0,2,3985),
+(9,'Ibuprofène',3000,0,2,3998),
 (10,'Lisinopril',8000,1,3,0),
 (11,'Metformine',4000,1,4,4000),
 (12,'Amlodipine',8500,1,3,4000),
 (13,'Glipizide',4500,1,4,4000),
 (14,'Vitamine C',1500,0,5,4000),
 (15,'Vitamine D',2000,0,5,3979),
-(16,'Oseltamivir',12000,1,6,3990),
+(16,'Oseltamivir',12000,1,6,3910),
 (17,'Acyclovir',10000,1,6,3998),
 (18,'Loratadine',3500,0,7,0),
 (19,'Cetirizine',3700,0,7,4000),
 (20,'Diclofenac',5000,0,8,4000),
 (21,'Prednisolone',8000,1,8,4000),
-(22,'Azithromycine',9000,1,1,4000),
+(22,'Azithromycine',9000,1,1,3900),
 (23,'Doxycycline',6500,1,1,0),
 (24,'Naproxen',4000,0,2,4000),
 (25,'Aspirin',2500,0,2,4000),
 (26,'Hydrochlorothiazide',7000,1,3,4000),
-(27,'Valsartan',9500,1,3,4000),
+(27,'Valsartan',9500,1,3,3996),
 (28,'Glibenclamide',4200,1,4,4000),
 (29,'Sitagliptin',9000,1,4,4000),
 (30,'Vitamine B12',2500,0,5,4000),
 (31,'Multivitamines',3000,0,5,0),
-(32,'Remdesivir',15000,1,6,3995),
-(33,'Ribavirin',11000,1,6,4000),
+(32,'Remdesivir',15000,1,6,3844),
+(33,'Ribavirin',11000,1,6,3990),
 (34,'Fexofenadine',4000,0,7,4000),
 (35,'Diphenhydramine',3000,0,7,4000),
 (36,'Meloxicam',5000,1,8,4000),
-(37,'Ibuprofen',3500,0,8,4000);
+(37,'Ibuprofen',3500,0,8,3992);
 /*!40000 ALTER TABLE `medicament` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -214,4 +229,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-07-15 15:38:19
+-- Dump completed on 2024-07-17 17:18:13

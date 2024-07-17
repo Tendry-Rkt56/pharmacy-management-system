@@ -34,7 +34,7 @@
                	    <li class="lien <?php if(str_contains($uri, '/medicament')): ?>active<?php endif ?>"><a href="/medicament">Médicaments</a></li>
                	    <li class="lien <?php if(str_contains($uri, '/category')): ?>active<?php endif ?>"><a href="/category">Catégories</a></li>
                	    <li class="lien <?php if(str_contains($uri, '/user')): ?>active<?php endif ?>"><a  href="/user">Utilisateurs</a></li>
-               	    <li class="lien <?php if(str_contains($uri, '/ventes')): ?>active<?php endif ?>"><a href="/achat">Ventes</a></li>
+               	    <li class="lien <?php if(str_contains($uri, '/ventes')): ?>active<?php endif ?>"><a href="/ventes">Ventes</a></li>
 				    <li>
 					    <form action="/logout" method="POST">
 						    <input type="submit" value="Déconnexion" class="btn btn-danger">
