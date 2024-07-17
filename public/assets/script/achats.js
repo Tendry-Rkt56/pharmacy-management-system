@@ -1,21 +1,21 @@
 document.addEventListener("DOMContentLoaded", function() {
-     const saleForm = document.getElementById("saleForm");
-     const medicamentContainer = document.getElementById("medicamentContainer");
-     const salesList = document.getElementById("salesList");
-     const premier = document.querySelector(".premier");
-     const price = document.querySelector(".premier-1");
-     const nombre = document.querySelector(".premier-2");
-     const suggestions = document.querySelector(".suggestions");
- 
-     premier.addEventListener('input', (e) => {
-          fetchSuggestions(premier.value, suggestions, price, premier, nombre);
-     })
+    const port = window.location.port
+    const saleForm = document.getElementById("saleForm");
+    const medicamentContainer = document.getElementById("medicamentContainer");
+    const salesList = document.getElementById("salesList");
+    const premier = document.querySelector(".premier");
+    const price = document.querySelector(".premier-1");
+    const nombre = document.querySelector(".premier-2");
+    const suggestions = document.querySelector(".suggestions");
 
-    //  // Ajouter un groupe de médicaments initial
-    //  addMedicamentGroup();
- 
-     // Ajouter un groupe de médicaments supplémentaire
-     document.getElementById("addMedicament").addEventListener("click", addMedicamentGroup);
+    premier.addEventListener('input', (e) => {
+         fetchSuggestions(premier.value, suggestions, price, premier, nombre);
+    })
+    // /  // Ajouter un groupe de médicaments initial
+    // /  addMedicamentGroup();
+
+    // Ajouter un groupe de médicaments supplémentaire
+    document.getElementById("addMedicament").addEventListener("click", addMedicamentGroup);
  
      function addMedicamentGroup() {
          const group = document.createElement("div");
@@ -53,29 +53,29 @@ document.addEventListener("DOMContentLoaded", function() {
          });
      }
  
-     function fetchSuggestions(query, suggestionsList, prixInput, medicamentInput, nombre) {
-         fetch('http://localhost:8090/API/medicament?value=' + query)
-             .then(response => response.json())
-             .then(data => {
-                 console.log(data)
-                 suggestionsList.innerHTML = ''; // Clear previous suggestions
-                 data.forEach(medicament => {
-                    const suggestionItem = document.createElement("li");
-                    suggestionItem.textContent = medicament.nom;
-                    suggestionItem.addEventListener("click", function() {
-                        suggestionsList.innerHTML = '';
-                        prixInput.value = medicament.prix;
-                        suggestionItem.textContent = medicament.nom;
-                        medicamentInput.value = medicament.nom
-                        nombre.setAttribute('name', 'medicament-'+medicament.id)
-                    });
-                    suggestionsList.appendChild(suggestionItem);
-                 });
-             })
-             .catch(error => {
-                 console.error('Error fetching suggestions:', error);
-             });
-     }
+    function fetchSuggestions(query, suggestionsList, prixInput, medicamentInput, nombre) {
+        fetch(`http://localhost:${port}/API/medicament?value=` + query)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                suggestionsList.innerHTML = ''; // Clear previous suggestions
+                data.forEach(medicament => {
+                   const suggestionItem = document.createElement("li");
+                   suggestionItem.textContent = medicament.nom;
+                   suggestionItem.addEventListener("click", function() {
+                       suggestionsList.innerHTML = '';
+                       prixInput.value = medicament.prix;
+                       suggestionItem.textContent = medicament.nom;
+                       medicamentInput.value = medicament.nom
+                       nombre.setAttribute('name', 'medicament-'+medicament.id)
+                   });
+                   suggestionsList.appendChild(suggestionItem);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching suggestions:', error);
+            });
+    } 
  
     // saleForm.addEventListener("submit", function(event) {
     //     event.preventDefault();
