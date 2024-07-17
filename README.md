@@ -49,6 +49,16 @@ Ce projet est une application de gestion de pharmacie développée en PHP et Jav
     php -S localhost:8000 -t public
     - Ou démarrer votre serveur de développement (xampp, wampp, ...)
 
+## Informations de connexion 
+  ### Administrateur
+      - URL de connexion : 'http://localhost:8000/login'
+      - Email : admin01@gmail.com
+      - Mot de passe : admin01
+  ### Utilisateur
+      - URL de connexion : 'http://localhost:8000/login'
+      - Email : client01@gmail.com
+      - Mot de passe : client01
+
 ## Illustrations
 ![Illustration 1](public/image/illustrations/1.png)
 
